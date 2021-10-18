@@ -24,3 +24,4 @@ let questionData = [{
     answer: "console.log"
 }]
 
+scoresArr = []

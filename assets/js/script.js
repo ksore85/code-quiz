@@ -84,3 +84,64 @@ startButtonElement.addEventListener("click", () => {
     strtTime();
     strtQuiz();
 });
+
+
+let returnScore = function () {
+    // remove timer
+    document.getElementById("timer").remove();
+    document.getElementById("question-area-content").remove();
+
+    let Score = timer
+
+    let alertBoxEl = document.createElement("section")
+    alertBoxEl.id = "alert-box"
+    document.body.append(alertBoxEl);
+
+    let gameOverStmt = document.createElement("p")
+    gameOverStmt.textContent = "All Done " + Score + ". Enter your initials."
+    alertBoxEl.append(gameOverStmt);
+
+    let playerInitForm = document.createElement("form")
+    alertBoxEl.append(playerInitForm)
+
+    let playerInitTxtbox = document.createElement("input")
+    playerInitTxtbox.setAttribute("type", "text");
+    playerInitTxtbox.id = "player-initials";
+    alertBoxEl.append(playerInitTxtbox);
+
+    let playerInitSubmitBtn = document.createElement("input")
+    playerInitSubmitBtn.setAttribute("type", "submit")
+    playerInitSubmitBtn.id = "submit-btn"
+    alertBoxEl.append(playerInitSubmitBtn);
+
+    // addEventListener for click of submit button
+    playerInitSubmitBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        let playerInits = document.querySelector('#player-initials').value;
+
+        if (playerInits === "") {
+            alert("Must Enter Initials!");
+        } else {
+            let obj = {
+                player: playerInits,
+                score: Score
+            }
+            if(localStorage.getItem("scoreTable")){
+                scoresArr = JSON.parse(localStorage.getItem("scoreTable"))
+            }
+            scoresArr.push(obj)
+
+            localStorage.setItem("scoreTable", JSON.stringify(scoresArr))
+            localStorage.setItem("playerInitials", playerInits);
+            localStorage.setItem("score", Score);
+            alertBoxEl.remove();
+            showScores();
+        }
+    })
+};
+
+
+
+let showScores = function () {
+
+}
