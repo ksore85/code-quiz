@@ -74,10 +74,13 @@ function runQs() {
         }
         );
 
-
-
-
         iterate();
-
     })
 }
+
+// On click eventListenser for start button to begin quiz
+let startButtonElement = document.getElementById("startBtn");
+startButtonElement.addEventListener("click", () => {
+    strtTime();
+    strtQuiz();
+});
