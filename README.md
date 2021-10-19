@@ -17,7 +17,7 @@ A front end JavaScript quiz application that stores high scores, utilizing Web A
  - jQuery
 
 ## Deployed Application
-[The deployed application can be found at this address.]()
+[The deployed application can be found at this address.](https://ksore85.github.io/code-quiz/)
 
 ## Screenshot
 ![Screenshot]()
