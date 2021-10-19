@@ -20,7 +20,7 @@ A front end JavaScript quiz application that stores high scores, utilizing Web A
 [The deployed application can be found at this address.]()
 
 ## Screenshot
-![Screenshot](code-quiz screenshot.png)
+![Screenshot](/Users/kylesorensen/Desktop/projects/code-quiz/code-quiz screenshot.png)
 
 ## License
 [![license-MIT-blue.png](https://img.shields.io/badge/license-MIT-blue)](#License)
