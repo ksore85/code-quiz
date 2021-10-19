@@ -12,7 +12,7 @@ let strtTime = function () {
         setTimeout(strtTime, 1000);
     }
 };
-// function for 10 sec penalty 
+// function for 10 second penalty 
 let wrngAns = function () {
     timer -= 10;
 };
@@ -63,7 +63,7 @@ function runQs() {
                 incorrectAns.textContent = "Incorrect"
                 $(incorrectAns).delay(200).fadeOut(500);
                 document.body.append(incorrectAns)
-                wrongAnswer();
+                wrngAns();
             }
             currentQuest++;
             if (currentQuest < questionData.length) {
@@ -73,18 +73,9 @@ function runQs() {
             }
         }
         );
-
         iterate();
     })
 }
-
-// On click eventListenser for start button to begin quiz
-let startButtonElement = document.getElementById("startBtn");
-startButtonElement.addEventListener("click", () => {
-    strtTime();
-    strtQuiz();
-});
-
 
 let returnScore = function () {
     // remove timer
@@ -140,8 +131,69 @@ let returnScore = function () {
     })
 };
 
-
-
 let showScores = function () {
+    let hiScores = document.createElement("section");
+    hiScores.id = "pageContent"
+    document.body.append(hiScores);
 
+    let scoreHeader = document.createElement("h2");
+    scoreHeader.textContent = "High Scores"
+    hiScores.append(scoreHeader);
+
+    let scoreList = document.createElement("ol")
+    scoreList.id = "scoreList"
+    hiScores.append(scoreList);
+
+    let addScores = function () {
+        let scoreScreenObject = JSON.parse(localStorage.getItem("scoreTable"))
+        scoreScreenObject.sort((a, b) => b.score - a.score);
+
+        for (i = 0; i < 3; i++) {
+            let scoreItem = document.createElement("li");
+            if (scoreScreenObject[i]){
+                scoreItem.textContent = (scoreScreenObject[i].player + " " + scoreScreenObject[i].score);
+            } else {
+                scoreItem.textContent = ""
+            }
+            scoreList.append(scoreItem);
+        }
+    }
+    addScores();
+
+    let buttonsDiv = document.createElement("div")
+    buttonsDiv.className = "button-container"
+    hiScores.append(buttonsDiv);
+
+    let restartButtonElement = document.createElement("button")
+    restartButtonElement.textContent = "Start Quiz!"
+    restartButtonElement.id = "restart-btn"
+    buttonsDiv.append(restartButtonElement);
+    
+    let clearScoresElement = document.createElement("button")
+    clearScoresElement.textContent = "Clear High Scores"
+    clearScoresElement.id = "clear-scores-btn"
+    buttonsDiv.append(clearScoresElement);
+
+    // function to clear high score data on click event listener
+    clearScoresElement.addEventListener("click", () => {
+        localStorage.clear();
+        scoreList.remove();
+        clearScoresElement.remove();
+    });
+    
+    // function to restart button for on click event listener to initiate quiz/timer
+    restartButtonElement.addEventListener("click", () => {
+        let timerCreate = document.createElement("h2");
+        timerCreate.id = "timer"
+        timer = 75
+        header.append(timerCreate);
+        strtTime();
+        strtQuiz();
+    });
 }
+
+let startButtonElement = document.getElementById("startBtn");
+startButtonElement.addEventListener("click", () => {
+    strtTime();
+    strtQuiz();
+});
