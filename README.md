@@ -1,16 +1,29 @@
 # code-quiz
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
+## Description
+A front end JavaScript quiz application that stores high scores, utilizing Web APIs and Dom Manipulation to change page contents while testing the user's knowledge of JavaScript. 
 
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score
+## Table of Contents
+- [Features](#features)
+- [Deployed Application](#deployed-application)
+- [License](#license)
+- [Credits](#credits)
+- [Questions, Comments, Suggestions](#questions-comments-suggestions)
+
+## Features
+ - HTML
+ - CSS
+ - JavaScript
+ - jQuery
+
+## Deployed Application
+[The deployed application can be found at this address.]()
+
+## License
+[![license-MIT-blue.png](https://img.shields.io/badge/license-MIT-blue)](#License)
+
+## Credits
+### Developed By
+- [Kyle Sorensen, Front End Developer](https://www.github.com/ksore85)
+
+## Questions, Comments, Suggestions
+Please email [Kyle Sorensen](mailto:ksore85@gmail.com) with any questions, to report any bugs, or to make any feature suggestions. You can also [contact Kyle Sorensen on GitHub](https://www.github.com/ksore85).
