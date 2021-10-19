@@ -5,6 +5,7 @@ A front end JavaScript quiz application that stores high scores, utilizing Web A
 ## Table of Contents
 - [Features](#features)
 - [Deployed Application](#deployed-application)
+- [Screenshot](#screenshot)
 - [License](#license)
 - [Credits](#credits)
 - [Questions, Comments, Suggestions](#questions-comments-suggestions)
@@ -17,6 +18,9 @@ A front end JavaScript quiz application that stores high scores, utilizing Web A
 
 ## Deployed Application
 [The deployed application can be found at this address.]()
+
+## Screenshot
+![Screenshot](code-quiz screenshot.png)
 
 ## License
 [![license-MIT-blue.png](https://img.shields.io/badge/license-MIT-blue)](#License)
