@@ -19,7 +19,7 @@ let questionData = [{
     answer: "parenthesis"
 },
 {
-    question: "A very useful tool used during development and debuggin for printing content to debugger is:",
+    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
     choices: ["javascript", "terminal/bash", "for loops", "console.log"],
     answer: "console.log"
 }]
